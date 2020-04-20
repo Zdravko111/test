@@ -1,33 +1,34 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <title>Project: Scene change</title>
-    <style>
-
+    <head>
+        <meta charset="utf-8">
+        <title>Project: Scene change</title>
+        <style>
         #leafers {
             position: absolute;
             top: 210px;
             left: 378px;
         }
-
+        
         h1 {
             position: absolute;
             top: 10px;
             left: 15px;
         }
-    </style>
-</head>
-<body>
+            
+        </style>
+    </head>
+    <body>
 
     <img src="https://www.kasandbox.org/programming-images/landscapes/beach-with-palm-trees.png" id="background">
 
     <img src="https://www.kasandbox.org/programming-images/avatars/leafers-seedling.png" id="leafers">
     <h1> Help Leafers grow by clicking on him!</h1>
-
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-
-    <script>var counter = 1;
+    
+    <script>
+    var counter = 1;
 
     var growLeafers = function(){
         if (counter === 1){
@@ -40,7 +41,7 @@
             counter = 3;
         }
     };
-
+    
     var changeBackground = function(){
         if (counter === 3){
             $("#background").attr("src", "https://www.kasandbox.org/programming-images/landscapes/mountain_matterhorn.png");
@@ -57,33 +58,35 @@
             .css("background", "white")
             .css("top", "300px");
         counter = 4;
-
+      
         }
     };
-
+    
     $("#leafers").on("click", function(event) {
         growLeafers();
     });
-
+        
     $("#background").on("click", function(event){
         changeBackground();
     });
-
-
-
-
+        
+  
+/* PART THAT'S NOT WORKING:*/
+/*
     $("#star").on("click," function(event){
-    if (counter === 4){
+    //if (counter === 4){
         $("#leafers")
             .attr("src", "https://www.kasandbox.org/programming-images/avatars/leafers-ultimate.png")
             .css("position", "absolute")
             .css("top", event.pageY - 100 + "px")
             .css("left", event.pageX - 40 + "px")
             .appendTo("body");
-
+            
             $("h1").text("Yay!");
 //}
 });
-*/</script>
-</body>
+*/
+        
+    </script>
+    </body>
 </html>
